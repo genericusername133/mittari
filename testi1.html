@@ -7,6 +7,7 @@
 	<!-- load jquery locally... -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+
 	<script>
 	var meterlimit = 4000; //sakkokatto
 	var metervalue = 500; //nykyset sakot
@@ -16,6 +17,7 @@
 	$(document).ready(function() {
 		console.log("Degree "+degree);
 		document.getElementById("needle").style.transform = "rotate("+degree+"deg)"; 
+		document.getElementById("meterpercentage").innerHTML = (percentage.toFixed(3))*100+"%";
 	});
 	</script>
 	<style type="text/css">
@@ -23,6 +25,7 @@
 		position: fixed;
 		bottom: 0px;
 		left: 0px;
+
 	}
 
 	 #needle {
@@ -38,6 +41,27 @@
 		position: absolute;
 		top: 70px;
 	}
+	@font-face {
+	   font-family: 'Let_s_go_Digital_Regular';
+	   src: url('Let_s_go_Digital_Regular.woff');
+	}
+	#meterpercentage{
+		position:absolute;
+		left:160px;
+		bottom:100px;
+		font-size:8vh;
+		font-family:Let_s_go_Digital_Regular;
+		background-color:black;
+		color:white;
+		border-radius:2vh;
+		padding:1vh;
+		<!-- kumpi????????????????????????????
+		    background-color: #404241;
+			color: #dcf331;
+		-->
+		
+		
+	}
 
 	</style>
 </head>
@@ -45,6 +69,7 @@
 	<div class="fixed"> 
 		<img src="Sakkomittari_taulu_uusi.svg" alt="Middari" width="400px" height="400px">
 		<span id="needle" style="transform:rotate(-135deg);transform-origin:bottom;"></span>
+		<div id="meterpercentage"></div>
 	</div>
 </div>
 </body>
