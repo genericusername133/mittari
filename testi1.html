@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>mittari</title>
+
+	<!-- load jquery locally... -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script>
+	var meterlimit = 4000; //sakkokatto
+	var metervalue = 500; //nykyset sakot
+	var percentage = metervalue/meterlimit;
+	var degree = 270*percentage-135;
+	
+	$(document).ready(function() {
+		console.log("Degree "+degree);
+		document.getElementById("needle").style.transform = "rotate("+degree+"deg)"; 
+	});
+	</script>
+	<style type="text/css">
+	div.fixed {
+		position: fixed;
+		bottom: 0px;
+		left: 0px;
+	}
+
+	 #needle {
+		width: 10px;
+		height: 130px;
+		background: #222;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		border-top-left-radius: 100%;
+		border-top-right-radius: 100%;
+		display: inline-block;
+		left: 195px;
+		position: absolute;
+		top: 70px;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="fixed"> 
+		<img src="Sakkomittari_taulu_uusi.svg" alt="Middari" width="400px" height="400px">
+		<span id="needle" style="transform:rotate(-135deg);transform-origin:bottom;"></span>
+	</div>
+</div>
+</body>
+</html>
