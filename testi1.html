@@ -16,8 +16,12 @@
 	
 	$(document).ready(function() {
 		console.log("Degree "+degree);
-		document.getElementById("needle").style.transform = "rotate("+degree+"deg)"; 
-		document.getElementById("meterpercentage").innerHTML = (percentage.toFixed(3))*100+"%";
+		document.getElementById("needle").style.transform = "rotate("+degree+"deg)"; //rotates needle
+		document.getElementById("meterpercentage").innerHTML = (percentage.toFixed(3))*100+"%"; //sets percentage
+		
+		setInterval(function() { //refresh page automatically
+            window.location.reload();
+        }, 21 600 000); //every 6 hours
 	});
 	</script>
 	<style type="text/css">
